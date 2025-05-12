@@ -34,11 +34,11 @@ A React-based translation management dashboard that allows users to manage and s
 translator-manager/
 ├── src/
 │   ├── components/       # Reusable UI components
-│   ├── services/         # API and utility services
+│   ├── context/          # Context manager of Application
+│   ├── data/             # initial data
 │   ├── pages/            # Application pages
-│   ├── assets/           # Static assets (images, styles, etc.)
-│   └── index.js          # Application entry point
-├── public/               # Public files
+│   └── App.tsx           # Application Router and context provider
+│   └── main.tsx          # Application Entry Point
 ├── package.json          # Project dependencies and scripts
 └── README.md             # Project documentation
 ```
