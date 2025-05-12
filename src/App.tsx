@@ -5,9 +5,9 @@ import {
   Routes,
 } from "react-router-dom";
 import { Header } from "./components/Header";
-import { TranslationProvider } from "./context/TranslationContext";
-import { Management } from "./pages/Management";
-import { Public } from "./pages/Public";
+import { TranslationProvider } from "context/TranslationContext";
+import { Management } from "pages/Management";
+import { Public } from "pages/Public";
 
 function App() {
   return (

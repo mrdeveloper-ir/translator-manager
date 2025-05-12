@@ -1,27 +1,32 @@
-import React, { useState } from 'react';
-import { useTranslation } from '../../context/TranslationContext';
+import React, { useState } from "react";
+import { useTranslation } from "context/TranslationContext";
 
 export const AddKeywordForm: React.FC = () => {
   const { state, addKeyword } = useTranslation();
-  const [keyword, setKeyword] = useState('');
-  const [translation, setTranslation] = useState('');
-  
+  const [keyword, setKeyword] = useState("");
+  const [translation, setTranslation] = useState("");
+
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
     if (keyword.trim() && translation.trim()) {
       addKeyword(keyword.trim(), state.selectedLanguage, translation.trim());
-      setKeyword('');
-      setTranslation('');
+      setKeyword("");
+      setTranslation("");
     }
   };
-  
+
   return (
     <div className="bg-white rounded-lg shadow-md p-5 mb-6 border border-gray-100">
-      <h2 className="text-lg font-medium text-gray-800 mb-4">Add New Keyword</h2>
+      <h2 className="text-lg font-medium text-gray-800 mb-4">
+        Add New Keyword
+      </h2>
       <form onSubmit={handleSubmit}>
         <div className="grid md:grid-cols-2 gap-4">
           <div>
-            <label htmlFor="keyword" className="block text-sm font-medium text-gray-700 mb-1">
+            <label
+              htmlFor="keyword"
+              className="block text-sm font-medium text-gray-700 mb-1"
+            >
               Keyword
             </label>
             <input
@@ -34,9 +39,12 @@ export const AddKeywordForm: React.FC = () => {
               required
             />
           </div>
-          
+
           <div>
-            <label htmlFor="translation" className="block text-sm font-medium text-gray-700 mb-1">
+            <label
+              htmlFor="translation"
+              className="block text-sm font-medium text-gray-700 mb-1"
+            >
               Translation ({state.selectedLanguage})
             </label>
             <input
@@ -50,7 +58,7 @@ export const AddKeywordForm: React.FC = () => {
             />
           </div>
         </div>
-        
+
         <button
           type="submit"
           className="mt-4 px-4 py-2 bg-blue-500 text-white rounded-md hover:bg-blue-600 transition-colors"

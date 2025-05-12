@@ -1,15 +1,17 @@
 import React, { useState } from "react";
-import { useTranslation } from "../../context/TranslationContext";
+import { useTranslation } from "context/TranslationContext";
 
 interface KeywordItemProps {
   keyword: Keyword;
   index: number;
-  dragHandleProps: unknown;
+  dragHandleProps: {
+    onMouseDown: (e: React.MouseEvent) => void;
+    onMouseUp: (e: React.MouseEvent) => void;
+  };
 }
 
 export const KeywordItem: React.FC<KeywordItemProps> = ({
   keyword,
-  index,
   dragHandleProps,
 }) => {
   const { state, updateTranslation } = useTranslation();
