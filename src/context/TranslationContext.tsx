@@ -1,5 +1,5 @@
-import React, { createContext, useContext, useState, useEffect } from "react";
-import { initialData } from "../data/initialData";
+import { initialData } from "data/initialData";
+import React, { createContext, useContext, useEffect, useState } from "react";
 
 interface TranslationContextType {
   state: TranslationState;
