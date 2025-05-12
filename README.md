@@ -73,17 +73,20 @@ Ensure you have the following installed:
 
 ## Usage
 
-- **Public View**:
-  Accessible at /. <br/>
-  Displays a list of keywords and their translations for the selected language.<br/>
-  Use the Language Selector to switch between languages.<br/>
-  Use the Search Input to filter keywords.<br/>
-- **Management View**:
-  Accessible at /management.<br/>
-  Allows adding, editing, and reordering keywords.<br/>
-  Use the Add Keyword Form to add new keywords and translations.<br/>
-  Drag and drop keywords to reorder them.<br/>
-  Changes are automatically saved to localStorage.<br/>
+### Public View
+
+- **Accessible at /.**
+- **Displays a list of keywords and their translations for the selected language.**
+- **Use the Language Selector to switch between languages.**
+- **Use the Search Input to filter keywords.**
+
+### Management View
+
+- **Accessible at /management.**
+- **Allows adding, editing, and reordering keywords.**
+- **Use the Add Keyword Form to add new keywords and translations.**
+- **Drag and drop keywords to reorder them.**
+- **Changes are automatically saved to localStorage.**
 
 ## Components
 
