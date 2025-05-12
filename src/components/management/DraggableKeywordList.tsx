@@ -1,10 +1,12 @@
 import React, { useState } from "react";
-import { useTranslation } from "../../context/TranslationContext";
+import { useTranslation } from "context/TranslationContext";
 import { KeywordItem } from "./KeywordItem";
+import { SearchInput } from "components/public";
 
 export const DraggableKeywordList: React.FC = () => {
   const { state, reorderKeywords } = useTranslation();
   const [draggedItemId, setDraggedItemId] = useState<number | null>(null);
+  const [searchQuery, setSearchQuery] = useState<string>("");
 
   const onDragStart = (e: React.DragEvent<HTMLDivElement>, id: number) => {
     setDraggedItemId(id);
@@ -40,13 +42,19 @@ export const DraggableKeywordList: React.FC = () => {
     }
   };
 
+  const filteredKeywords = state.keywords.filter((keyword) =>
+    keyword.keyword.toLowerCase().includes(searchQuery.toLowerCase())
+  );
+
   return (
     <div className="mt-6">
       <h2 className="text-lg font-medium text-gray-800 mb-4">
-        Keywords ({state.keywords.length})
+        Keywords ({filteredKeywords.length})
       </h2>
 
-      {state.keywords.map((keyword, index) => (
+      <SearchInput searchQuery={searchQuery} setSearchQuery={setSearchQuery} />
+
+      {filteredKeywords.map((keyword, index) => (
         <div
           key={keyword.id}
           draggable
