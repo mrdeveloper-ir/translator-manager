@@ -9,7 +9,6 @@ A React-based translation management dashboard that allows users to manage and s
 - [Getting Started](#getting-started)
   - [Prerequisites](#prerequisites)
   - [Installation](#installation)
-  - [Running the Application](#running-the-application)
 - [Usage](#usage)
   - [Public View](#public-view)
   - [Management View](#management-view)
@@ -49,8 +48,8 @@ translator-manager/
 
 Ensure you have the following installed:
 
-- [Node.js](https://nodejs.org/) (v16 or higher)
-- [npm](https://www.npmjs.com/) or [yarn](https://yarnpkg.com/)
+- [Node.js](https://nodejs.org/) (v18 or higher) i use 20.16.0
+- [npm](https://www.npmjs.com/)
 
 ### Installation
 
@@ -75,16 +74,16 @@ Ensure you have the following installed:
 ## Usage
 
 - **Public View**:
-  Accessible at /.
-  Displays a list of keywords and their translations for the selected language.
-  Use the Language Selector to switch between languages.
-  Use the Search Input to filter keywords.
+  Accessible at /. <br/>
+  Displays a list of keywords and their translations for the selected language.<br/>
+  Use the Language Selector to switch between languages.<br/>
+  Use the Search Input to filter keywords.<br/>
 - **Management View**:
-  Accessible at /management.
-  Allows adding, editing, and reordering keywords.
-  Use the Add Keyword Form to add new keywords and translations.
-  Drag and drop keywords to reorder them.
-  Changes are automatically saved to localStorage.
+  Accessible at /management.<br/>
+  Allows adding, editing, and reordering keywords.<br/>
+  Use the Add Keyword Form to add new keywords and translations.<br/>
+  Drag and drop keywords to reorder them.<br/>
+  Changes are automatically saved to localStorage.<br/>
 
 ## Components
 
