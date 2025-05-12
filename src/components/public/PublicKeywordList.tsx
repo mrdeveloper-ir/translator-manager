@@ -1,16 +1,24 @@
-import React from 'react';
-import { useTranslation } from '../../context/TranslationContext';
-import { motion } from 'framer-motion';
+import React, { useState } from "react";
+import { useTranslation } from "context/TranslationContext";
+import { motion } from "framer-motion";
+import { SearchInput } from "./SearchInput";
 
 export const PublicKeywordList: React.FC = () => {
   const { state } = useTranslation();
+  const [searchQuery, setSearchQuery] = useState<string>("");
+
+  const filteredKeywords = state.keywords.filter((keyword) =>
+    keyword.keyword.toLowerCase().includes(searchQuery.toLowerCase())
+  );
 
   return (
     <div className="mt-6 max-w-3xl mx-auto">
+      <SearchInput searchQuery={searchQuery} setSearchQuery={setSearchQuery} />
       <div className="grid gap-4">
-        {state.keywords.map((keyword) => {
-          const translation = keyword.translations[state.selectedLanguage] || '';
-          
+        {filteredKeywords.map((keyword) => {
+          const translation =
+            keyword.translations[state.selectedLanguage] || "";
+
           return (
             <motion.div
               key={keyword.id}
@@ -25,8 +33,12 @@ export const PublicKeywordList: React.FC = () => {
                   {keyword.keyword}
                 </h3>
                 <div className="md:w-2/3 md:pl-6">
-                  <p className={`${translation ? 'text-gray-700' : 'text-gray-400 italic'} text-lg`}>
-                    {translation || 'No translation available'}
+                  <p
+                    className={`${
+                      translation ? "text-gray-700" : "text-gray-400 italic"
+                    } text-lg`}
+                  >
+                    {translation || "No translation available"}
                   </p>
                 </div>
               </div>
