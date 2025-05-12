@@ -13,7 +13,7 @@ export const Header: React.FC = () => {
           <div className="flex items-center">
             <Globe className="h-8 w-8 text-blue-500" />
             <span className="ml-2 text-xl font-semibold text-gray-800">
-              TranslationHub
+              dashboard
             </span>
           </div>
 
@@ -26,7 +26,7 @@ export const Header: React.FC = () => {
                   : "text-gray-600 hover:text-blue-500 hover:bg-gray-50"
               } transition-colors`}
             >
-              Public View
+              Public
             </Link>
             <Link
               to="/management"
@@ -36,7 +36,7 @@ export const Header: React.FC = () => {
                   : "text-gray-600 hover:text-blue-500 hover:bg-gray-50"
               } transition-colors`}
             >
-              Management
+              Admin
             </Link>
           </nav>
         </div>
